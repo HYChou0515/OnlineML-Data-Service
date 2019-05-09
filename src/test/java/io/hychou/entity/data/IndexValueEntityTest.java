@@ -5,14 +5,14 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IndexValueTest extends DataStructureTest {
+public class IndexValueEntityTest extends DataStructureTest {
 
-    private IndexValue s1;
-    private String s1ToString = "IndexValue{index=1, value=2.0}";
+    private IndexValueEntity s1;
+    private String s1ToString = "IndexValueEntity{index=1, value=2.0}";
 
     @Before
     public void setUp() {
-        s1 = new IndexValue();
+        s1 = new IndexValueEntity();
         s1.setIndex(1);
         s1.setValue(2.0);
     }
@@ -21,7 +21,7 @@ public class IndexValueTest extends DataStructureTest {
     @Override
     public void equals_givenSelf_thenTrueShouldBeFound() {
         // given
-        IndexValue s = s1;
+        IndexValueEntity s = s1;
         // when
         assertEqualsAndHaveSameHashCode(s1, s);
     }
@@ -30,9 +30,9 @@ public class IndexValueTest extends DataStructureTest {
     @Override
     public void equals_givenSameObject_thenTrueShouldBeFound() {
         // given
-        Object s = new IndexValue();
-        ((IndexValue) s).setIndex(s1.getIndex());
-        ((IndexValue) s).setValue(s1.getValue());
+        Object s = new IndexValueEntity();
+        ((IndexValueEntity) s).setIndex(s1.getIndex());
+        ((IndexValueEntity) s).setValue(s1.getValue());
         // when
         assertEqualsAndHaveSameHashCode(s1, s);
     }
@@ -41,7 +41,7 @@ public class IndexValueTest extends DataStructureTest {
     @Override
     public void equals_givenSame_thenTrueShouldBeFound() {
         // given
-        IndexValue s = new IndexValue();
+        IndexValueEntity s = new IndexValueEntity();
         s.setIndex(s1.getIndex());
         s.setValue(s1.getValue());
         // when
@@ -52,7 +52,7 @@ public class IndexValueTest extends DataStructureTest {
     @Override
     public void equals_givenDiff_thenFalseShouldBeFound() {
         // given
-        IndexValue s = new IndexValue();
+        IndexValueEntity s = new IndexValueEntity();
         s.setIndex(s1.getIndex());
         s.setValue(s1.getValue()+1);
         // when
@@ -63,7 +63,7 @@ public class IndexValueTest extends DataStructureTest {
     @Override
     public void equals_givenNull_thenFalseShouldBeFound() {
         // given
-        IndexValue n = null;
+        IndexValueEntity n = null;
         // when
         assertNotEqualAndHaveDifferentHashCode(s1, n);
     }
